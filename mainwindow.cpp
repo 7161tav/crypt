@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     ui->lcdNumber->display(ui->lineEdit->text().size());
-    /*
+
     ui->spinBox_1_1->setMaximum(ui->lineEdit->text().size()-1);
     ui->spinBox_1_2->setMaximum(ui->lineEdit->text().size()-1);
     ui->spinBox_1_3->setMaximum(ui->lineEdit->text().size()-1);
@@ -62,7 +62,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->spinBox_b_4_2->setMaximum(ui->lineEdit->text().size()-1);
     ui->spinBox_b_4_3->setMaximum(ui->lineEdit->text().size()-1);
     ui->spinBox_b_4_4->setMaximum(ui->lineEdit->text().size()-1);
-*/
+
     hide();
     hide_2();
 
@@ -83,8 +83,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->lineEdit1_Beta->setValidator(new QRegExpValidator(exp, this));
     ui->lineEdit1_Beta_2->setValidator(new QRegExpValidator(exp, this));
     ui->lineEdit1_Beta_3->setValidator(new QRegExpValidator(exp, this));
-
-
 }
 
 MainWindow::~MainWindow()
@@ -109,7 +107,6 @@ void MainWindow::enCription()
 
     QString result;
 
-
     int k = 0;
     int index = 0;
     for (int i = 0; i < text.size(); i++)
@@ -128,7 +125,6 @@ void MainWindow::enCription()
                     result.append(text[i-1]);
             }
     ui->lineEdit_output->setText(result);
-
 }
 
 void MainWindow::deCription()
@@ -159,7 +155,6 @@ void MainWindow::deCription()
                     result.append(text[i-1]);
             }
     ui->lineEdit_output->setText(result);
-
 }
 
 int MainWindow::ext_gcd(int a, int b, int x, int y)
@@ -282,7 +277,6 @@ void MainWindow::enCriptionRec()
 
     QString result;
 
-
     int k = 0;
     int index = 0;
     for (int i = 0; i < text.size(); i++)
@@ -301,7 +295,6 @@ void MainWindow::enCriptionRec()
                     result.append(text[i-1]);
             }
     ui->lineEdit_3->setText(result);
-
 }
 
 void MainWindow::deCriptionRec()
@@ -322,7 +315,6 @@ void MainWindow::deCriptionRec()
     }
 
     QString result;
-
 
     int k = 0;
     int index = 0;
@@ -345,7 +337,6 @@ void MainWindow::deCriptionRec()
                     result.append(text[i-1]);
             }
     ui->lineEdit_3->setText(result);
-
 }
 
 void MainWindow::hide()
@@ -366,7 +357,6 @@ void MainWindow::hide()
     ui->spinBox_4_2->hide();
     ui->spinBox_4_3->hide();
     ui->spinBox_4_4->hide();
-
 }
 
 void MainWindow::hide_2()
@@ -403,7 +393,6 @@ void MainWindow::hide_2()
     ui->spinBox_b_4_2->hide();
     ui->spinBox_b_4_3->hide();
     ui->spinBox_b_4_4->hide();
-
 }
 
 void MainWindow::on_comboBox_currentTextChanged(const QString &arg1)
@@ -491,9 +480,9 @@ void MainWindow::on_pushButton_3_clicked()
         int a_4_4 = ui->spinBox_4_4->value();
 
         int b_1_1, b_1_2, b_1_3, b_1_4,
-                b_2_1, b_2_2, b_2_3, b_2_4,
-                b_3_1, b_3_2, b_3_3, b_3_4,
-                b_4_1, b_4_2, b_4_3, b_4_4;
+            b_2_1, b_2_2, b_2_3, b_2_4,
+            b_3_1, b_3_2, b_3_3, b_3_4,
+            b_4_1, b_4_2, b_4_3, b_4_4;
 
         int det = 0, x = 0;
 
@@ -576,7 +565,6 @@ void MainWindow::on_pushButton_3_clicked()
                         result.append(str[(str.indexOf(text[i]) * a_1_1 + str.indexOf(text[i+1]) * a_2_1 + str.indexOf(text[i+2]) * a_3_1) % str.size()]);
                         result.append(str[(str.indexOf(text[i]) * a_1_2 + str.indexOf(text[i+1]) * a_2_2 + str.indexOf(text[i+2]) * a_3_2) % str.size()]);
                         result.append(str[(str.indexOf(text[i]) * a_1_3 + str.indexOf(text[i+1]) * a_2_3 + str.indexOf(text[i+2]) * a_3_3) % str.size()]);
-
                     }
                     ui->lineEdit_5->setText(result);
                 }
@@ -601,21 +589,19 @@ void MainWindow::on_pushButton_3_clicked()
                         b_3_2 = ((a_1_2 * a_3_1 - a_1_1 * a_3_2) * x) % str.size();
                         b_3_3 = ((a_1_1 * a_2_2 - a_1_2 * a_2_1) * x) % str.size();
 
-                        qDebug() << (a_2_2 * a_3_3 - a_2_3 * a_3_2) << (a_1_3 * a_3_2 - a_1_2 * a_3_3) << (a_1_2 * a_2_3 - a_1_3 * a_2_2);
-                        qDebug() << (a_2_3 * a_3_1 - a_2_1 * a_3_3) << (a_1_1 * a_3_3 - a_1_3 * a_3_1) << (a_1_3 * a_2_1 - a_1_1 * a_2_3);
-                        qDebug() << (a_2_1 * a_3_2 - a_2_2 * a_3_1) << (a_1_2 * a_3_1 - a_1_1 * a_3_2) << (a_1_1 * a_2_2 - a_1_2 * a_2_1);
-                        qDebug() << "  ";
+                        //qDebug() << (a_2_2 * a_3_3 - a_2_3 * a_3_2) << (a_1_3 * a_3_2 - a_1_2 * a_3_3) << (a_1_2 * a_2_3 - a_1_3 * a_2_2);
+                        //qDebug() << (a_2_3 * a_3_1 - a_2_1 * a_3_3) << (a_1_1 * a_3_3 - a_1_3 * a_3_1) << (a_1_3 * a_2_1 - a_1_1 * a_2_3);
+                        //qDebug() << (a_2_1 * a_3_2 - a_2_2 * a_3_1) << (a_1_2 * a_3_1 - a_1_1 * a_3_2) << (a_1_1 * a_2_2 - a_1_2 * a_2_1);
+                        //qDebug() << "  ";
 
-                        qDebug() << (a_2_2 * a_3_3 - a_2_3 * a_3_2)% str.size() << (a_1_3 * a_3_2 - a_1_2 * a_3_3)% str.size() << (a_1_2 * a_2_3 - a_1_3 * a_2_2)% str.size();
-                        qDebug() << (a_2_3 * a_3_1 - a_2_1 * a_3_3)% str.size() << (a_1_1 * a_3_3 - a_1_3 * a_3_1)% str.size() << (a_1_3 * a_2_1 - a_1_1 * a_2_3)% str.size();
-                        qDebug() << (a_2_1 * a_3_2 - a_2_2 * a_3_1)% str.size() << (a_1_2 * a_3_1 - a_1_1 * a_3_2)% str.size() << (a_1_1 * a_2_2 - a_1_2 * a_2_1)% str.size();
-                        qDebug() << "  ";
+                        //qDebug() << (a_2_2 * a_3_3 - a_2_3 * a_3_2)% str.size() << (a_1_3 * a_3_2 - a_1_2 * a_3_3)% str.size() << (a_1_2 * a_2_3 - a_1_3 * a_2_2)% str.size();
+                        //qDebug() << (a_2_3 * a_3_1 - a_2_1 * a_3_3)% str.size() << (a_1_1 * a_3_3 - a_1_3 * a_3_1)% str.size() << (a_1_3 * a_2_1 - a_1_1 * a_2_3)% str.size();
+                        //qDebug() << (a_2_1 * a_3_2 - a_2_2 * a_3_1)% str.size() << (a_1_2 * a_3_1 - a_1_1 * a_3_2)% str.size() << (a_1_1 * a_2_2 - a_1_2 * a_2_1)% str.size();
+                        //qDebug() << "  ";
 
-                        qDebug() << (a_2_2 * a_3_3 - a_2_3 * a_3_2)% str.size()* x << (a_1_3 * a_3_2 - a_1_2 * a_3_3)% str.size()* x << (a_1_2 * a_2_3 - a_1_3 * a_2_2)% str.size()* x;
-                        qDebug() << (a_2_3 * a_3_1 - a_2_1 * a_3_3)% str.size()* x << (a_1_1 * a_3_3 - a_1_3 * a_3_1)% str.size()* x << (a_1_3 * a_2_1 - a_1_1 * a_2_3)% str.size()* x;
-                        qDebug() << (a_2_1 * a_3_2 - a_2_2 * a_3_1)% str.size()* x << (a_1_2 * a_3_1 - a_1_1 * a_3_2)% str.size()* x << (a_1_1 * a_2_2 - a_1_2 * a_2_1)% str.size()* x;
-
-
+                        //qDebug() << (a_2_2 * a_3_3 - a_2_3 * a_3_2)% str.size()* x << (a_1_3 * a_3_2 - a_1_2 * a_3_3)% str.size()* x << (a_1_2 * a_2_3 - a_1_3 * a_2_2)% str.size()* x;
+                        //qDebug() << (a_2_3 * a_3_1 - a_2_1 * a_3_3)% str.size()* x << (a_1_1 * a_3_3 - a_1_3 * a_3_1)% str.size()* x << (a_1_3 * a_2_1 - a_1_1 * a_2_3)% str.size()* x;
+                        //qDebug() << (a_2_1 * a_3_2 - a_2_2 * a_3_1)% str.size()* x << (a_1_2 * a_3_1 - a_1_1 * a_3_2)% str.size()* x << (a_1_1 * a_2_2 - a_1_2 * a_2_1)% str.size()* x;
 
                         if(b_1_1 < 0) b_1_1+=str.size();
                         if(b_1_2 < 0) b_1_2+=str.size();
@@ -627,10 +613,9 @@ void MainWindow::on_pushButton_3_clicked()
                         if(b_3_2 < 0) b_3_2+=str.size();
                         if(b_3_3 < 0) b_3_3+=str.size();
 
-                        qDebug() << b_1_1 << b_1_2 << b_1_3;
-                        qDebug() << b_2_1 << b_2_2 << b_2_3;
-                        qDebug() << b_3_1 << b_3_2 << b_3_3;
-
+                        //qDebug() << b_1_1 << b_1_2 << b_1_3;
+                        //qDebug() << b_2_1 << b_2_2 << b_2_3;
+                        //qDebug() << b_3_1 << b_3_2 << b_3_3;
 
                         for (int i = 0; i < text.size(); i+=3)
                         {
@@ -638,7 +623,6 @@ void MainWindow::on_pushButton_3_clicked()
                             result.append(str[(str.indexOf(text[i]) * b_1_2 + str.indexOf(text[i+1]) * b_2_2 + str.indexOf(text[i+2]) * b_3_2) % str.size()]);
                             result.append(str[(str.indexOf(text[i]) * b_1_3 + str.indexOf(text[i+1]) * b_2_3 + str.indexOf(text[i+2]) * b_3_3) % str.size()]);
                         }
-
                         ui->lineEdit_5->setText(result);
                     }
                     else
@@ -1362,12 +1346,11 @@ void MainWindow::on_pushButton_4_clicked()
 }
 
 void MainWindow::on_pushButton_5_clicked(bool checked)
-{
+{    
     QString alphabet = ui->lineEdit->text();
     QString key = ui->lineEdit_8->text();
     QString input = ui->lineEdit_9->text();
     QString output;
-
 
     while(key.size() < input.size())
         key+=key;
@@ -1446,11 +1429,11 @@ int MainWindow::sundaram(int n)
         {
           if(a[i] == 0)
           {
-              return(2 * i + 1);
-              break;
+              delete [] a;
+              return(2 * i + 1);              
           }
         }
-        delete [] a;
+
 }
 
 void MainWindow::on_pushButton_7_clicked()
@@ -1458,5 +1441,4 @@ void MainWindow::on_pushButton_7_clicked()
     int n = sundaram(ui->spinBox_2->value());
     qDebug() << n << " " << ui->spinBox_2->value();
     ui->spinBox_2->setValue(n);
-
 }

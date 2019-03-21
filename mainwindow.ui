@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Криптография. Бирекпаева Камила Кайратовна</string>
+   <string>Криптография.</string>
   </property>
   <property name="windowIcon">
    <iconset resource="resource.qrc">
@@ -45,7 +45,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>6</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
